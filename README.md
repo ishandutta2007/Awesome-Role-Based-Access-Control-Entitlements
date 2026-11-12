@@ -1,170 +1,287 @@
-# Awesome-Role-Based-Access-Control-Entitlements
+# Awesome Role-Based Access Control & Entitlements 🔐
 
-# Awesome Role-Based Access Control & Entitlements
+<div align="center">
 
-> A curated list of top Role-Based Access Control (RBAC) and Entitlement Management platforms — both SaaS/Hosted commercial solutions and open-source alternatives for managing user roles, fine-grained permissions, and access entitlements at scale.
-> 🌟 Star this repo if you find it useful! 🌟
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements/pulls)
+[![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements/graphs/commit-activity)
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+
+<br/>
+<br/>
+
+<img src="./assets/banner.svg" alt="Awesome Role-Based Access Control &amp; Entitlements Banner" width="100%"/>
+
+<br/>
+<br/>
+
+**The curated directory of Role-Based Access Control (RBAC), Identity Governance &amp; Administration (IGA), Cloud Infrastructure Entitlement Management (CIEM), and Fine-Grained Authorization engines.**
+
+[![GitHub stars](https://img.shields.io/github/stars/ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements?style=social)](https://github.com/ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements?style=social)](https://github.com/ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements/network/members)
+
+</div>
+
+> 🌟 **Welcome to the definitive guide on Access Control &amp; Entitlements!** Whether implementing enterprise-wide workforce RBAC, orchestrating policy-as-code microservices, or securing cloud infrastructure permissions, this curated collection covers leading SaaS platforms and actively maintained open-source frameworks.
 
 ---
 
-## 📋 Table of Contents
+## 📑 Table of Contents
 
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Okta](#okta)
-  - [Microsoft Entra ID](#microsoft-entra-id)
-  - [Ping Identity](#ping-identity)
-  - [CyberArk Identity](#cyberark-identity)
-  - [SailPoint](#sailpoint)
-  - [OneLogin](#onelogin)
-  - [Auth0](#auth0)
-- [Open-Source Software](#-open-source-software)
-  - [Apache Syncope](#apache-syncope)
-  - [Evolveum midPoint](#evolveum-midpoint)
-  - [OpenAM](#openam)
-  - [OpenRBAC](#openrbac)
-  - [Keycloak](#keycloak)
-  - [Casbin](#casbin)
-  - [OpenFGA](#openfga)
-  - [SpiceDB](#spicedb)
-  - [Ory Keto](#ory-keto)
-  - [Cerbos](#cerbos)
-  - [Paralus](#paralus)
-- [Comparison at a Glance](#-comparison-at-a-glance)
-- [Contributing](#-contributing)
+- [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🟦 SaaS / Hosted Platforms](#-saas--hosted-platforms)
+- [🟩 Open-Source Software](#-open-source-software)
+  - [Keycloak](#1-keycloak)
+  - [Authelia](#2-authelia)
+  - [Casbin](#3-casbin)
+  - [Open Policy Agent (OPA)](#4-open-policy-agent-opa)
+  - [SpiceDB](#5-spicedb)
+  - [OpenFGA](#6-openfga)
+  - [Permify](#7-permify)
+  - [OPAL (Permit.io)](#8-opal-policy-administration-layer)
+  - [Ory Keto](#9-ory-keto)
+  - [Pomerium](#10-pomerium)
+  - [Cerbos](#11-cerbos)
+  - [Gatekeeper](#12-gatekeeper-opa-for-kubernetes)
+  - [Authorizer](#13-authorizer)
+  - [Paralus](#14-paralus)
+  - [OpenAM](#15-openam)
+  - [Evolveum midPoint](#16-evolveum-midpoint)
+  - [Apache Syncope](#17-apache-syncope)
+- [📊 Comparison at a Glance](#-comparison-at-a-glance)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global **Identity & Access Management (IAM)** sector is valued at approximately **$25B–$29B** (growing at a 12–15% CAGR toward $70B+), while the specialized **Cloud Infrastructure Entitlement Management (CIEM)** and fine-grained authorization niche is experiencing hyper-growth, expanding from **$1.5B to over $7B** at a 35–44% CAGR. 
+
+The market dynamics present a **moderately fragmented and bifurcated landscape**: core enterprise workforce authentication and identity governance are concentrated around incumbent mega-cap cybersecurity vendors (Microsoft, Okta, CyberArk, SailPoint), whereas cloud-native entitlements, fine-grained authorization (FGA), and Zanzibar-inspired relationship-based access control (ReBAC) remain highly fragmented, fast-moving, and driven by agile open-source engines and specialized security startups.
 
 ---
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted RBAC and Entitlement Management platforms. These are not open-source but are included as reference points for feature comparison.
+Commercial, enterprise-grade cloud platforms providing Role-Based Access Control (RBAC), Identity Governance and Administration (IGA), and Privileged Access/Entitlement Management.
 
-### Okta
-**Type:** Enterprise IAM with standard and custom admin roles  
-Okta provides standard admin roles (Super Admin, Org Admin, App Admin, Group Admin, Read-Only Admin) with predefined permissions, plus custom roles that bundle granular permissions. Role assignments can be scoped to specific resources for least-privilege access.
+*Sorted by company scale (Valuation / Market Capitalization) in descending order:*
 
-### Microsoft Entra ID
-**Type:** Identity platform with built-in and custom roles  
-Entra ID provides built-in roles (Global Admin, User Admin, App Admin) and custom roles assignable at Tenant, Administrative Unit, or specific resource scope. PIM enables just-in-time role activation with approval workflows and audit trails.
-
-### Ping Identity
-**Type:** Enterprise identity with hierarchical admin roles  
-PingOne provides built-in admin roles with defined role-assignment hierarchies (e.g., Environment Admin can assign all roles except Organization Admin). Custom roles can be created with granular permission identifiers, with automatic, group-based, or user-based assignments.
-
-### CyberArk Identity
-**Type:** Identity administration with role-based rights  
-CyberArk Identity uses roles as the unit of access control, assigning application access, administrative rights, and policies to roles rather than individual users. Roles can bundle both app access and administrative privileges.
-
-### SailPoint
-**Type:** Enterprise identity governance and administration (IGA)  
-SailPoint provides identity governance, access certifications, role management, and policy enforcement across enterprise applications, ensuring entitlements are granted, reviewed, and revoked according to policy.
-
-### OneLogin
-**Type:** IAM with app-centric roles and attribute mapping  
-OneLogin roles are collections of apps; assigning a user to a role grants access to all apps in that role. Mappings can automatically assign users to roles based on directory attributes (e.g., Department = HR).
-
-### Auth0
-**Type:** Developer IAM with dashboard roles  
-Auth0 provides dashboard roles including Admin (full read/write), Editor roles for specific resources (Connections, Organizations, Specific Apps, Users), and Viewer roles for read-only access, enabling least-privilege dashboard access.
+| Product 🏢 | Company Scale (Valuation / Revenue) 📈 | Pricing (Starting Tier) 💵 | Free Tier / Trial Limit ⏱️ | Core Access Control & Entitlements Focus 🎯 |
+|:---|:---|:---|:---|:---|
+| **[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id)** | **$3.87T Market Cap**<br/>($346.4B Annual Revenue) | **$7.00** per user/month (Entra ID P1 tier, billed annually) | **30-day free trial** (Includes up to 100 evaluation user licenses with full P1/P2 feature suite) | Enterprise directory, built-in/custom RBAC, Privileged Identity Management (PIM) with approval workflows, conditional access, and automated lifecycle governance. |
+| **[CyberArk Identity](https://www.cyberark.com/products/identity-management/)** | **$21.1B Valuation**<br/>($1.2B+ Annual Revenue) | **$4.00** per user/month (Workforce Standard tier, annual enterprise contract) | **14-day free trial** (Evaluation access to SSO, adaptive MFA, and role administration environment) | Privilege-centric RBAC, administrative rights delegation, role-scoped app access, credential vaulting, and fine-grained entitlement governance. |
+| **[Okta](https://www.okta.com/)** | **$25.0B Market Cap**<br/>($2.9B Annual Revenue) | **$6.00** per user/month (Workforce Starter tier, billed annually) | **30-day free trial** (Full sandbox tenant access to SSO, Universal Directory, MFA, and access control workflows) | Workforce and customer IAM, standard & custom admin roles, resource-scoped permissions, lifecycle management, and access entitlement certifications. |
+| **[Auth0](https://auth0.com/)** *(by Okta)* | **$6.5B Acquisition Valuation**<br/>(Part of Okta $2.9B Revenue) | **$35.00** per month (B2C Essentials, up to 500 MAU) / **$150.00** per month (B2B Essentials) | **Free Forever Tier**: Up to **25,000 Monthly Active Users (MAUs)** with 1 Enterprise Connection, 5 Organizations, and unlimited social logins | Developer-first identity platform, fine-grained API authorization, dashboard RBAC roles (Admin, Editor, Viewer), multi-tenant organization scoping, and enterprise federation. |
+| **[SailPoint Identity Security Cloud](https://www.sailpoint.com/)** | **$11.0B Valuation**<br/>($1.17B Annual Revenue) | **$6.00** per identity/month (Business tier estimate, annual enterprise deployment) | **No public free tier**; Proof-of-concept (POC) sandbox provisioned via direct enterprise sales engagement | Dedicated Identity Governance & Administration (IGA), automated role mining, access requests & certifications, entitlement discovery, and AI-driven least-privilege compliance. |
+| **[Ping Identity](https://www.pingidentity.com/)** | **$2.8B Acquisition Valuation**<br/>(Thoma Bravo / ForgeRock portfolio) | **$3.00** per user/month (PingOne Essential tier, annual workforce agreement) | **30-day free trial** (PingOne cloud evaluation tenant provisioned for up to 1,000 test identities) | Enterprise federated IAM, hierarchical admin roles, DaVinci zero-trust orchestration, granular permission identifiers, and hybrid cloud entitlement enforcement. |
+| **[OneLogin](https://www.onelogin.com/)** *(by One Identity)* | **~$200M+ Estimated Valuation**<br/>(Part of Quest Software) | **$2.00** per user/month (Starter tier, billed annually) | **30-day free trial** (Complete platform access for testing cloud directory, application roles, and SCIM provisioning) | App-centric role management, attribute-based dynamic role mapping (e.g., department rules), automated user onboarding, and enterprise single sign-on. |
 
 ---
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven RBAC and Entitlement Management tools. The open-source ecosystem spans **full IGA platforms with role/entitlement management**, **authorization engines for fine-grained decisions**, and **Kubernetes-native access control**.
+Self-hosted, community-driven access control engines, relationship-based authorization databases (Zanzibar), and policy-as-code decision points.
 
-### Apache Syncope
+*Sorted by GitHub stargazers in descending order:*
+
+| Project 📦 | Stars ⭐ | Primary Stack 🛠️ | License 📜 | Architecture Category 🏛️ |
+|:---|:---|:---|:---|:---|
+| **[Keycloak](https://github.com/keycloak/keycloak)** | [![GitHub stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | Java | Apache-2.0 | Full IAM Platform with Realm/Client RBAC |
+| **[Authelia](https://github.com/authelia/authelia)** | [![GitHub stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | Go / TypeScript | Apache-2.0 | Lightweight Authentication & RBAC Reverse Proxy |
+| **[Casbin](https://github.com/casbin/casbin)** | [![GitHub stars](https://img.shields.io/github/stars/casbin/casbin?style=social&color=white)](https://github.com/casbin/casbin/stargazers) | Multi-language (Go, Java, Python, Node, Rust) | Apache-2.0 | Embeddable Multi-Model (ACL, RBAC, ABAC) Library |
+| **[Open Policy Agent (OPA)](https://github.com/open-policy-agent/opa)** | [![GitHub stars](https://img.shields.io/github/stars/open-policy-agent/opa?style=social&color=white)](https://github.com/open-policy-agent/opa/stargazers) | Go (Rego) | Apache-2.0 (CNCF Graduated) | General-Purpose Policy-as-Code Engine (PDP) |
+| **[SpiceDB](https://github.com/authzed/spicedb)** | [![GitHub stars](https://img.shields.io/github/stars/authzed/spicedb?style=social&color=white)](https://github.com/authzed/spicedb/stargazers) | Go | Apache-2.0 | Google Zanzibar ReBAC Authorization Database |
+| **[OpenFGA](https://github.com/openfga/openfga)** | [![GitHub stars](https://img.shields.io/github/stars/openfga/openfga?style=social&color=white)](https://github.com/openfga/openfga/stargazers) | Go | Apache-2.0 (CNCF Incubating) | Zanzibar-Inspired Fine-Grained Authorization Engine |
+| **[Permify](https://github.com/Permify/permify)** | [![GitHub stars](https://img.shields.io/github/stars/Permify/permify?style=social&color=white)](https://github.com/Permify/permify/stargazers) | Go | Apache-2.0 | Zanzibar-Based Authorization Service with DSL |
+| **[OPAL (Permit.io)](https://github.com/permitio/opal)** | [![GitHub stars](https://img.shields.io/github/stars/permitio/opal?style=social&color=white)](https://github.com/permitio/opal/stargazers) | Python / TypeScript | Apache-2.0 | Real-Time Policy Administration Layer for OPA/CEDAR |
+| **[Ory Keto](https://github.com/ory/keto)** | [![GitHub stars](https://img.shields.io/github/stars/ory/keto?style=social&color=white)](https://github.com/ory/keto/stargazers) | Go | Apache-2.0 | Relationship-Based Access Control (ReBAC) Server |
+| **[Pomerium](https://github.com/pomerium/pomerium)** | [![GitHub stars](https://img.shields.io/github/stars/pomerium/pomerium?style=social&color=white)](https://github.com/pomerium/pomerium/stargazers) | Go | Apache-2.0 | Identity-Aware Zero-Trust Access Proxy with RBAC |
+| **[Cerbos](https://github.com/cerbos/cerbos)** | [![GitHub stars](https://img.shields.io/github/stars/cerbos/cerbos?style=social&color=white)](https://github.com/cerbos/cerbos/stargazers) | Go | Apache-2.0 | Stateless Context-Aware Policy Decision Point (PDP) |
+| **[Gatekeeper](https://github.com/open-policy-agent/gatekeeper)** | [![GitHub stars](https://img.shields.io/github/stars/open-policy-agent/gatekeeper?style=social&color=white)](https://github.com/open-policy-agent/gatekeeper/stargazers) | Go | Apache-2.0 | Kubernetes Admission Controller & RBAC Enforcer |
+| **[Authorizer](https://github.com/authorizerdev/authorizer)** | [![GitHub stars](https://img.shields.io/github/stars/authorizerdev/authorizer?style=social&color=white)](https://github.com/authorizerdev/authorizer/stargazers) | Go / React | Zlib / MIT | Cloud-Native Auth with Role & Session Management |
+| **[Paralus](https://github.com/paralus/paralus)** | [![GitHub stars](https://img.shields.io/github/stars/paralus/paralus?style=social&color=white)](https://github.com/paralus/paralus/stargazers) | Go | Apache-2.0 (CNCF Sandbox) | Audited Kubernetes RBAC & Service Account Gateway |
+| **[OpenAM](https://github.com/OpenIdentityPlatform/OpenAM)** | [![GitHub stars](https://img.shields.io/github/stars/OpenIdentityPlatform/OpenAM?style=social&color=white)](https://github.com/OpenIdentityPlatform/OpenAM/stargazers) | Java | CDDL-1.0 / Open Source | Access Management & Entitlements Engine |
+| **[Evolveum midPoint](https://github.com/Evolveum/midpoint)** | [![GitHub stars](https://img.shields.io/github/stars/Evolveum/midpoint?style=social&color=white)](https://github.com/Evolveum/midpoint/stargazers) | Java | EUPL-1.2 / Open Source | Enterprise Identity Governance & Entitlement Lifecycle |
+| **[Apache Syncope](https://github.com/apache/syncope)** | [![GitHub stars](https://img.shields.io/github/stars/apache/syncope?style=social&color=white)](https://github.com/apache/syncope/stargazers) | Java | Apache-2.0 | Comprehensive IGA Platform with Approval Workflows |
+
+---
+
+### 1. Keycloak
+**Repo:** [keycloak/keycloak](https://github.com/keycloak/keycloak) | [![GitHub stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers)  
 **Stack:** Java | **License:** Apache-2.0  
-Apache Syncope is an open-source Identity and Access Management (IAM) and Identity Governance Administration (IGA) platform designed to manage digital identities, user provisioning, authentication, authorization, and access control across enterprise environments [citation:2]. Key features include **user, group, role, and entitlement management**, automated user provisioning/deprovisioning workflows, RBAC and delegated administration, support for LDAP, Active Directory, databases, and external systems, REST APIs, SAML 2.0/OIDC/SCIM standards support, and audit logging with compliance reporting [citation:2]. The platform also includes **approval and request management** with configurable approval workflows and workflow event notification [citation:13]. Deploys via Docker containers with a web-based administrative console [citation:2].  
-**Best for:** Organizations wanting a comprehensive open-source IGA platform with native role/entitlement management, approval workflows, and broad connector support under Apache-2.0 licensing.
+Keycloak is the standard for open-source Identity and Access Management. It delivers out-of-the-box support for realm-level roles, client-scoped roles, composite role hierarchies, and group-based role mappings. Its authorization services layer enables fine-grained permissions over resources, scopes, and policies (evaluating role, user, time, and aggregated criteria).  
+* **Key Capabilities:** Realm & client roles, composite roles, SAML 2.0 / OpenID Connect, user federation (LDAP/AD), fine-grained authorization server.  
+* **Best for:** Enterprise backends and microservices requiring a battle-tested, turn-key authentication and role authorization foundation.
 
-### Evolveum midPoint
-**Stack:** Java | **License:** Open Source (subscription model)  
-Evolveum midPoint is a comprehensive open-source Identity Governance and Administration (IGA) platform used by organizations worldwide for identity provisioning, governance, compliance, and access management . Its most important features include **identity governance, security auditing and reporting, organizational structure management, credential management, request approval, and entitlement management** . Additional capabilities include advanced RBAC with temporal constraints, identity synchronization (liveSync, reconciliation, discovery, import), password policies, ConnId connectors, provisioning consistency and error handling, and high availability support . It also handles identity lifecycle management, governance, and analytics, automatically creating, assigning, enabling, and disabling accounts while managing the assignment of roles and entitlements to employees, partners, agents, contractors, customers, and students [citation:9].  
-**Best for:** Organizations needing enterprise-grade open-source IGA with deep governance, role/entitlement lifecycle management, and approval workflows, accepting the operational overhead of a Java-based platform.
+### 2. Authelia
+**Repo:** [authelia/authelia](https://github.com/authelia/authelia) | [![GitHub stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers)  
+**Stack:** Go / TypeScript | **License:** Apache-2.0  
+Authelia is an open-source authentication and authorization companion server that integrates directly with reverse proxies (Traefik, NGINX, Envoy, Caddy). It enforces role-based access rules and two-factor authentication before traffic reaches backend services.  
+* **Key Capabilities:** Reverse proxy integration, YAML-based RBAC access rules per domain/path, WebAuthn/TOTP 2FA, OpenID Connect Provider.  
+* **Best for:** DevOps teams and homelabbers looking to protect self-hosted web applications with lightweight reverse-proxy RBAC.
 
-### OpenAM
-**Stack:** Java | **License:** Open Source (per GitHub)  
-OpenAM is an open access management solution that includes Authentication, SSO, Authorization, Federation, **Entitlements**, and Web Services Security [citation:1]. It supports Cross Domain Single Sign On (CDSSO), SAML 2.0, OAuth 2.0, and OpenID Connect, integrating with legacy, custom, and cloud applications without modification [citation:1]. Access policies can be role-based, authentication level-based, or attribute-based, with scripting for flexible access policy logic [citation:1].  
-**Best for:** Organizations wanting a proven open-source access management platform with native entitlements and policy-based authorization, particularly for legacy/cloud integration scenarios.
+### 3. Casbin
+**Repo:** [casbin/casbin](https://github.com/casbin/casbin) | [![GitHub stars](https://img.shields.io/github/stars/casbin/casbin?style=social&color=white)](https://github.com/casbin/casbin/stargazers)  
+**Stack:** Multi-language (Go, Java, Node.js, Python, PHP, Rust, .NET) | **License:** Apache-2.0  
+Apache Casbin (Incubating) is an embeddable authorization library supporting multiple access control models defined via the PERM (Policy, Effect, Request, Matchers) DSL. It allows developers to switch between classic ACL, hierarchical RBAC (with role inheritance and domains/tenants), and ABAC without changing application code.  
+* **Key Capabilities:** Zero network hops (in-process library), multi-tenant RBAC, role inheritance, persistent storage adapters (SQL, NoSQL).  
+* **Best for:** Developers embedding fast, low-overhead RBAC/ABAC authorization checks directly inside monolithic or microservice codebases.
 
-### OpenRBAC
-**Stack:** Spring Boot / Java | **License:** Open Source (per GitHub)  
-OpenRBAC is a high-performance RBAC engine designed for modern microservices and multi-tenant applications, going beyond simple RBAC with hierarchical groups and inheritance [citation:5]. Key features include **multi-tenancy via realms**, **hierarchical groups with recursive membership inheritance**, granular RBAC with four-level permission inheritance (Direct, Role, Group, Group-Role), temporary access with expiry dates, and a unified "effective" view that solves the N+1 problem by fetching all effective security contexts in a single query [citation:5]. Includes an Angular admin UI and Keycloak synchronization [citation:5]. **Note:** Audit logging, ABAC support, and client SDKs are planned but not yet available [citation:5].  
-**Best for:** Java/Spring Boot teams wanting a purpose-built, high-performance RBAC engine with hierarchical groups and multi-tenancy, accepting that some enterprise features are still on the roadmap.
+### 4. Open Policy Agent (OPA)
+**Repo:** [open-policy-agent/opa](https://github.com/open-policy-agent/opa) | [![GitHub stars](https://img.shields.io/github/stars/open-policy-agent/opa?style=social&color=white)](https://github.com/open-policy-agent/opa/stargazers)  
+**Stack:** Go (Rego DSL) | **License:** Apache-2.0 (CNCF Graduated)  
+OPA is the industry standard for general-purpose Policy-as-Code. By decoupling policy decisions from policy enforcement, OPA evaluates structured JSON data against declarative policies written in Rego. It can evaluate RBAC roles, attribute rules, and complex multi-factor authorization criteria in sub-millisecond response times.  
+* **Key Capabilities:** Declarative Rego language, decoupled Policy Decision Point (PDP), high-throughput daemon or WebAssembly compilation, extensive telemetry.  
+* **Best for:** Cloud-native microservices, CI/CD pipeline gating, API gateways, and unified policy enforcement across heterogeneous stacks.
 
-### Keycloak
-**Stack:** Java | **License:** Apache-2.0  
-Keycloak is the most widely deployed open-source IAM platform, providing realm-level roles, client roles, composite roles, and group-based role mapping. Fine-grained authorization services allow defining resources, scopes, and policies (role, user, client, time, aggregate) for complex access decisions. Admin console access is controlled via admin roles.  
-**Best for:** Organizations wanting a proven IAM foundation with rich role modeling and policy-based authorization, accepting that multi-admin approval for role changes must be implemented separately.
-
-### Casbin
-**Stack:** Multi-language (Go, Java, Node, Python, PHP, .NET, Rust) | **License:** Apache-2.0  
-Apache Casbin (Incubating) is the "quiet giant" of authorization libraries, with 20,334 GitHub stars and implementations across major languages [citation:10]. It supports ACL, RBAC, ABAC, and RESTful access control models, with models and policies defined in configuration files for flexible role inheritance and custom access logic. **Trade-off:** It is a library, not a platform—you embed it in your application and build admin UI, approval, and audit on top. No network hop and no vendor, but no control plane and no answer for "which objects can this user see" [citation:10].  
-**Best for:** Developers wanting a flexible, embeddable authorization engine with model-driven RBAC/ABAC policies, particularly for monoliths needing real ABAC without a separate service.
-
-### OpenFGA
+### 5. SpiceDB
+**Repo:** [authzed/spicedb](https://github.com/authzed/spicedb) | [![GitHub stars](https://img.shields.io/github/stars/authzed/spicedb?style=social&color=white)](https://github.com/authzed/spicedb/stargazers)  
 **Stack:** Go | **License:** Apache-2.0  
-OpenFGA is a high-performance, flexible authorization/permission engine built for developers and inspired by Google Zanzibar [citation:6]. It entered CNCF Incubating maturity in October 2025 and provides a JSON-based model definition with rich SDKs across Node, Go, Python, Java, .NET, and Ruby [citation:4][citation:10]. The modeling language reads close to English, and `ListObjects` is first-class for answering "which objects can this user see" [citation:10]. **Trade-off:** Operational overhead includes a stateful service plus a sync path that writes a tuple whenever your app creates a shareable resource [citation:10].  
-**Best for:** Organizations wanting a CNCF-backed, Zanzibar-style relationship-based authorization system with strong SDK support and clear governance.
+SpiceDB is an open-source, Google Zanzibar-inspired authorization database created by AuthZed for scalably storing and querying fine-grained permission data. It uses relationship tuples (`object#relation@subject`) and schema definitions to compute transitivity, role hierarchies, and organization entitlements with linear horizontal scaling.  
+* **Key Capabilities:** Strict consistency control via ZedTokens (mitigates the "New Enemy" problem), p99 < 10ms check latency, schema validation, gRPC & REST APIs.  
+* **Best for:** Multi-tenant SaaS products and collaborative enterprise apps requiring scalable relationship-based access control (ReBAC).
 
-### SpiceDB
+### 6. OpenFGA
+**Repo:** [openfga/openfga](https://github.com/openfga/openfga) | [![GitHub stars](https://img.shields.io/github/stars/openfga/openfga?style=social&color=white)](https://github.com/openfga/openfga/stargazers)  
+**Stack:** Go | **License:** Apache-2.0 (CNCF Incubating)  
+Originally developed by Auth0/Okta and contributed to the CNCF, OpenFGA is a high-performance authorization engine designed for developers. It models complex permissions—such as RBAC, ABAC, and ReBAC—using an intuitive modeling language, providing first-class APIs for single-check validations (`Check`) and object listings (`ListObjects`).  
+* **Key Capabilities:** Human-readable DSL, SDKs for Node, Go, Python, Java, .NET, native `ListObjects` queries, pluggable storage backends (Postgres, MySQL, SQLite).  
+* **Best for:** Engineering teams building modern cloud applications that require Google Zanzibar modeling without complex operational overhead.
+
+### 7. Permify
+**Repo:** [Permify/permify](https://github.com/Permify/permify) | [![GitHub stars](https://img.shields.io/github/stars/Permify/permify?style=social&color=white)](https://github.com/Permify/permify/stargazers)  
 **Stack:** Go | **License:** Apache-2.0  
-SpiceDB is the most established Zanzibar-inspired authorization database, designed for scalably storing and querying fine-grained authorization data [citation:6][citation:8]. Its key differentiator is **consistency control**—explicit consistency levels including a ZedToken requiring a read as fresh as your last write, addressing the cache staleness problem in permission revocation [citation:10]. Performance is p99 < 10ms Check on a single node, scaling horizontally to hundreds of thousands of Check/sec [citation:4]. Pricing includes open source free, AuthZed Cloud advertised as "deploy a permissions system for $2/hr" with $700 in starter credits, and self-hosted enterprise licensed per region and vCPU [citation:10].  
-**Best for:** Organizations needing the highest scale and explicit consistency controls for fine-grained authorization, accepting the heaviest operational commitment among Zanzibar implementations.
+Permify is an open-source authorization service based on Google Zanzibar. It allows developers to create custom authorization models combining RBAC, ReBAC, and ABAC attributes through a clear schema language. Permify handles real-time permission evaluation and distributed relationship tracking across microservices.  
+* **Key Capabilities:** Flexible authorization DSL, relation and attribute evaluation, Jaeger tracing integration, multi-tenancy support.  
+* **Best for:** Microservice architectures needing unified access control with both relationship graphs and dynamic attribute evaluation.
 
-### Ory Keto
+### 8. OPAL (Policy Administration Layer)
+**Repo:** [permitio/opal](https://github.com/permitio/opal) | [![GitHub stars](https://img.shields.io/github/stars/permitio/opal?style=social&color=white)](https://github.com/permitio/opal/stargazers)  
+**Stack:** Python / TypeScript | **License:** Apache-2.0  
+Created by Permit.io, OPAL acts as the administration and real-time synchronization layer for policy engines like Open Policy Agent (OPA) and AWS Cedar. While OPA evaluates policies statelessly, OPAL watches Git repos and application databases to push updated RBAC role definitions and policy state via WebSockets in milliseconds.  
+* **Key Capabilities:** Real-time policy and data pushes, GitOps-driven policy tracking, decoupled data fetchers, zero-downtime policy reloads.  
+* **Best for:** Teams operating distributed OPA decision points that need instant data updates whenever roles or user permissions change.
+
+### 9. Ory Keto
+**Repo:** [ory/keto](https://github.com/ory/keto) | [![GitHub stars](https://img.shields.io/github/stars/ory/keto?style=social&color=white)](https://github.com/ory/keto/stargazers)  
 **Stack:** Go | **License:** Apache-2.0  
-Ory Keto is an open-source authorization server implementing Google Zanzibar-style relationship-based access control (ReBAC) [citation:4]. It answers "can subject X do action Y on object Z" using relationship tuples, supporting fine-grained permissions that can model RBAC, ABAC, and hierarchical access. Part of the broader Ory stack (Kratos, Hydra).  
-**Best for:** Teams already running the Ory stack wanting integrated relationship-based authorization, accepting a partial Zanzibar model compared to SpiceDB.
+Ory Keto is the authorization component of the popular Ory open-source security suite (alongside Kratos and Hydra). It implements Google Zanzibar relationship access control, exposing gRPC and REST endpoints to determine whether an entity has access based on hierarchical and graph relationships.  
+* **Key Capabilities:** Ultra-fast sub-millisecond lookups, Zanzibar tuple architecture, seamless compatibility with Ory Kratos identity management.  
+* **Best for:** Projects already utilizing the Ory ecosystem for user management looking for native relationship-based permission checks.
 
-### Cerbos
+### 10. Pomerium
+**Repo:** [pomerium/pomerium](https://github.com/pomerium/pomerium) | [![GitHub stars](https://img.shields.io/github/stars/pomerium/pomerium?style=social&color=white)](https://github.com/pomerium/pomerium/stargazers)  
 **Stack:** Go | **License:** Apache-2.0  
-Cerbos is a **policy-driven** authorization solution (not relationship-driven), positioned as a stateless Policy Decision Point (PDP) that stores no permissions [citation:4]. Policies are authored in YAML, and context (subject, resource, environment) is provided by the caller on every request. The open-source PDP is free forever; Cerbos Hub adds a control plane with a Proof of Concept tier at $0/mo up to 100 monthly active principals and Development from $25/mo [citation:10]. **Conditional logic is where this shape wins**, but listing objects is the weak spot, requiring the query-planner API to produce a database filter [citation:10].  
-**Best for:** Teams wanting conditional, context-aware authorization policies without moving permission data out of their primary store, particularly where listing is not a primary requirement.
+Pomerium is an identity-aware proxy that enforces Zero Trust Network Access (ZTNA) and role-based policies on internal enterprise applications. Acting as an ingress point, Pomerium verifies identity, groups, and contextual metadata on every HTTP request before routing traffic.  
+* **Key Capabilities:** Context-aware RBAC policies, OIDC/IdP integration, clientless browser access, built-in Envoy proxy architecture.  
+* **Best for:** Organizations replacing legacy VPNs with an identity-aware proxy that gates web services by user group and role.
 
-### Paralus
+### 11. Cerbos
+**Repo:** [cerbos/cerbos](https://github.com/cerbos/cerbos) | [![GitHub stars](https://img.shields.io/github/stars/cerbos/cerbos?style=social&color=white)](https://github.com/cerbos/cerbos/stargazers)  
+**Stack:** Go | **License:** Apache-2.0  
+Cerbos is a stateless Policy Decision Point (PDP) designed to take the complexity out of authorization logic. Policies are declared in intuitive YAML files specifying role and attribute conditions. The Cerbos daemon evaluates access requests in microseconds while remaining completely stateless.  
+* **Key Capabilities:** Clean YAML policy definitions, contextual condition logic, query planner (translates authorization policies into SQL `WHERE` clauses), WebAssembly compilation.  
+* **Best for:** Engineering teams that want simple, audit-ready YAML policy files without storing permission graph databases.
+
+### 12. Gatekeeper (OPA for Kubernetes)
+**Repo:** [open-policy-agent/gatekeeper](https://github.com/open-policy-agent/gatekeeper) | [![GitHub stars](https://img.shields.io/github/stars/open-policy-agent/gatekeeper?style=social&color=white)](https://github.com/open-policy-agent/gatekeeper/stargazers)  
+**Stack:** Go | **License:** Apache-2.0  
+Gatekeeper is an admission controller webhook that integrates Open Policy Agent with Kubernetes. It provides validation and mutation policies to govern cluster access, enforce role separation, and inspect resource entitlements across namespaces.  
+* **Key Capabilities:** Custom Resource Definition (CRD)-based policy templates, audit capabilities for cluster drift, declarative governance.  
+* **Best for:** Kubernetes cluster administrators seeking automated enforcement of RBAC guardrails and pod security compliance.
+
+### 13. Authorizer
+**Repo:** [authorizerdev/authorizer](https://github.com/authorizerdev/authorizer) | [![GitHub stars](https://img.shields.io/github/stars/authorizerdev/authorizer?style=social&color=white)](https://github.com/authorizerdev/authorizer/stargazers)  
+**Stack:** Go / React | **License:** Zlib / MIT  
+Authorizer is an open-source, lightweight authentication and authorization solution that can be deployed to any infrastructure (Kubernetes, Docker, Heroku). It provides a GraphQL and REST API with built-in role assignment, session management, and social logins.  
+* **Key Capabilities:** Turn-key React login UI, role-based session tokens, multi-database support (Postgres, MySQL, DynamoDB, MongoDB).  
+* **Best for:** Full-stack developers wanting an all-in-one Auth0 alternative with role management that can be self-hosted in minutes.
+
+### 14. Paralus
+**Repo:** [paralus/paralus](https://github.com/paralus/paralus) | [![GitHub stars](https://img.shields.io/github/stars/paralus/paralus?style=social&color=white)](https://github.com/paralus/paralus/stargazers)  
 **Stack:** Go | **License:** Apache-2.0 (CNCF Sandbox)  
-Paralus is a free, open-source tool that enables controlled, audited access to Kubernetes infrastructure for users, user groups, and services, shipping as a GUI, API, and CLI [citation:12]. It integrates with pre-existing RBAC configuration and SSO providers (OIDC), providing just-in-time service account creation, fine-grained credential management, **dynamic and immediate changing/revoking of permissions**, and real-time audit logs [citation:12]. Custom roles, users, and groups can be created, with access controlled via pre-configured roles across clusters, namespaces, and projects [citation:12].  
-**Best for:** Kubernetes teams wanting fine-grained, audited access control with dynamic permission revocation and SSO integration, accepting a Kubernetes-specific scope.
+Paralus is a security platform offering centralized access management for Kubernetes infrastructure. It integrates with corporate IdPs to deliver just-in-time service accounts, dynamic role assignment, and granular audit logging across clusters, projects, and namespaces.  
+* **Key Capabilities:** Centralized multi-cluster RBAC, dynamic permission revocation, zero-trust CLI/API access proxy, complete audit trails.  
+* **Best for:** Cloud infrastructure teams managing access across dozens of distributed Kubernetes clusters with strict compliance needs.
+
+### 15. OpenAM
+**Repo:** [OpenIdentityPlatform/OpenAM](https://github.com/OpenIdentityPlatform/OpenAM) | [![GitHub stars](https://img.shields.io/github/stars/OpenIdentityPlatform/OpenAM?style=social&color=white)](https://github.com/OpenIdentityPlatform/OpenAM/stargazers)  
+**Stack:** Java | **License:** CDDL-1.0 / Open Source  
+OpenAM (maintained by Open Identity Platform, continuing the Sun/ForgeRock OpenAM heritage) provides full access management, single sign-on, identity federation, and fine-grained entitlement management for web applications and web services.  
+* **Key Capabilities:** Native entitlement engine, policy script evaluation, Cross-Domain SSO (CDSSO), SAML 2.0/OIDC integration.  
+* **Best for:** Organizations maintaining complex legacy or hybrid cloud enterprise application suites requiring formal entitlement management.
+
+### 16. Evolveum midPoint
+**Repo:** [Evolveum/midpoint](https://github.com/Evolveum/midpoint) | [![GitHub stars](https://img.shields.io/github/stars/Evolveum/midpoint?style=social&color=white)](https://github.com/Evolveum/midpoint/stargazers)  
+**Stack:** Java | **License:** EUPL-1.2 / Open Source  
+Evolveum midPoint is a comprehensive open-source Identity Governance and Administration (IGA) platform. Unlike pure authorization libraries, midPoint manages the full lifecycle of roles, organizational structures, temporal assignments (temporary access with expiration), and automated request/approval certifications.  
+* **Key Capabilities:** Deep identity governance, temporal RBAC constraints, ConnId connectors for provisioning, approval workflows, compliance auditing.  
+* **Best for:** Government, university, and large enterprise environments requiring a complete, self-hosted IGA and role-governance control plane.
+
+### 17. Apache Syncope
+**Repo:** [apache/syncope](https://github.com/apache/syncope) | [![GitHub stars](https://img.shields.io/github/stars/apache/syncope?style=social&color=white)](https://github.com/apache/syncope/stargazers)  
+**Stack:** Java | **License:** Apache-2.0  
+Apache Syncope is an open-source digital identity management system that handles identity lifecycle, role provisioning, and entitlement administration across heterogeneous corporate networks. It includes a built-in workflow engine (Flowable) for orchestrating multi-step approval requests when users require elevated role assignments.  
+* **Key Capabilities:** Native role & entitlement management, workflow-based approval pipelines, SCIM 2.0 / SAML / OIDC connectors, multi-tenancy.  
+* **Best for:** Organizations needing a 100% Apache-licensed, full-featured IGA solution with native request-approval workflows.
 
 ---
 
 ## 📊 Comparison at a Glance
 
-| Software | License | Stack | Role/Entitlement Mgmt | Approval Workflow | Authorization Model | Self-Hosted | Best For |
-|----------|---------|-------|----------------------|-------------------|---------------------|-------------|----------|
-| **Okta** | Proprietary | Cloud | ✅ Standard + custom | (Via workflows) | RBAC | ❌ | Enterprise IAM + scoped roles |
-| **Entra ID** | Proprietary | Cloud | ✅ Built-in + custom | ✅ PIM | RBAC | ❌ | Microsoft ecosystem |
-| **Apache Syncope** | Apache-2.0 | Java | ✅ Role + entitlement | ✅ Request/approval | RBAC | ✅ | Full IGA + approval workflows |
-| **midPoint** | Open Source | Java | ✅ Role + entitlement | ✅ Request approval | RBAC + temporal | ✅ | Enterprise IGA governance |
-| **OpenAM** | Open Source | Java | ✅ Entitlements | (Check) | RBAC/ABAC/script | ✅ | Access management + entitlements |
-| **OpenRBAC** | Open Source | Spring Boot | ✅ Hierarchical groups | (Planned) | RBAC | ✅ | High-performance RBAC engine |
-| **Keycloak** | Apache-2.0 | Java | ✅ Realm/client/composite | ❌ | RBAC + policy | ✅ | Proven IAM foundation |
-| **Casbin** | Apache-2.0 | Multi-language | (Library) | ❌ | ACL/RBAC/ABAC | ✅ (Embed) | Embeddable authz |
-| **OpenFGA** | Apache-2.0 | Go | (Relationship tuples) | ❌ | ReBAC (Zanzibar) | ✅ | CNCF relationship authz |
-| **SpiceDB** | Apache-2.0 | Go | (Relationship tuples) | ❌ | ReBAC (Zanzibar) | ✅ | Highest scale + consistency |
-| **Cerbos** | Apache-2.0 | Go | (Policy YAML) | ❌ | ABAC + RBAC | ✅ | Conditional policy decisions |
-| **Paralus** | Apache-2.0 | Go | ✅ Custom roles | ❌ (Dynamic revoke) | RBAC (K8s) | ✅ | Kubernetes access control |
+| Platform / Engine | Type | Primary Authorization Model | Self-Hosted | Dynamic Approval Workflows | Primary Use Case |
+|:---|:---|:---|:---:|:---:|:---|
+| **Microsoft Entra ID** | Cloud SaaS | RBAC + Conditional Access | ❌ | ✅ (PIM) | Microsoft 365 & enterprise Azure identity |
+| **CyberArk Identity** | Cloud SaaS | Privilege-Centric RBAC | ❌ | ✅ | Privileged workforce & administrative control |
+| **Okta** | Cloud SaaS | Enterprise RBAC | ❌ | ✅ (Workflows) | Enterprise-wide workforce & customer IAM |
+| **Auth0** | Cloud SaaS | Developer RBAC / Scopes | ❌ | ❌ | SaaS application auth & multi-tenant orgs |
+| **SailPoint Identity** | Cloud SaaS | IGA Role & Entitlement Governance | ❌ | ✅ | Compliance certifications & role lifecycle |
+| **Ping Identity** | Cloud SaaS | Hierarchical RBAC | ❌ | ✅ | Hybrid cloud orchestration & federated IAM |
+| **OneLogin** | Cloud SaaS | Application-Centric RBAC | ❌ | ❌ | Directory-driven app mapping & SSO |
+| **Keycloak** | Open-Source | Realm/Client RBAC + Resource Scopes | ✅ | ❌ | General enterprise identity & application SSO |
+| **Authelia** | Open-Source | Domain & Path-based RBAC | ✅ | ❌ | Reverse-proxy authentication gateway |
+| **Casbin** | Open-Source | Multi-Model (ACL, RBAC, ABAC) | ✅ | ❌ | Fast in-process library authorization |
+| **Open Policy Agent** | Open-Source | Policy-as-Code (Rego) | ✅ | ❌ | Decoupled cloud-native policy decisions (PDP) |
+| **SpiceDB** | Open-Source | ReBAC (Zanzibar graph tuples) | ✅ | ❌ | Scalable fine-grained permission database |
+| **OpenFGA** | Open-Source | ReBAC / Fine-Grained Authorization | ✅ | ❌ | Developer-friendly Zanzibar authorization |
+| **Permify** | Open-Source | ReBAC + ABAC DSL | ✅ | ❌ | Microservice relationship permission server |
+| **OPAL (Permit.io)** | Open-Source | Policy Administration Layer | ✅ | ❌ | Real-time policy and state push for OPA |
+| **Ory Keto** | Open-Source | ReBAC (Zanzibar) | ✅ | ❌ | Ory stack relationship authorization |
+| **Pomerium** | Open-Source | Contextual RBAC / ZTNA | ✅ | ❌ | Zero-trust identity proxy for internal services |
+| **Cerbos** | Open-Source | Context-Aware Policy (YAML) | ✅ | ❌ | Stateless decision point for business logic |
+| **Gatekeeper** | Open-Source | Rego Admission Control | ✅ | ❌ | Kubernetes cluster RBAC & admission policies |
+| **Authorizer** | Open-Source | Role-based Session Auth | ✅ | ❌ | Fast turn-key auth with role assignments |
+| **Paralus** | Open-Source | Kubernetes Cluster RBAC | ✅ | ❌ | Zero-trust Kubernetes access management |
+| **OpenAM** | Open-Source | Access Management & Entitlements | ✅ | ❌ | Enterprise SSO & web entitlement engine |
+| **Evolveum midPoint** | Open-Source | Temporal RBAC & Full IGA | ✅ | ✅ | Enterprise governance & credential lifecycle |
+| **Apache Syncope** | Open-Source | Role & Entitlement Management | ✅ | ✅ | Open-source IGA with approval workflows |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source RBAC or Entitlement Management tool that should be listed here, please open a pull request with:
+Contributions are warmly welcome! Help keep this repository the authoritative, up-to-date guide for Role-Based Access Control and Entitlement Management:
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
-
-Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source. Note that the open-source ecosystem **splits sharply** between **full IGA platforms with native role/entitlement management and approval workflows** (Apache Syncope, Evolveum midPoint) and **authorization engines** (Keycloak, Casbin, OpenFGA, SpiceDB, Ory Keto, Cerbos) that answer "can X do Y on Z" but do **not** include entitlement lifecycle management or multi-admin approval. **Apache Syncope** and **midPoint** are the only open-source projects found with built-in request/approval workflows alongside role and entitlement management [citation:2]. For pure authorization decisions at scale, **OpenFGA** (CNCF-backed) and **SpiceDB** (highest consistency control) are the leading Zanzibar-inspired options [citation:10].
+1. **Fork the repository** on GitHub.
+2. **Review criteria**:
+   - Project must be actively maintained (commits or releases within the past 12 months).
+   - Must provide concrete RBAC, IGA, ReBAC, or entitlement functionality.
+   - For open-source tools, include the stack, license, and public GitHub repository link.
+3. **Submit a pull request** with clear, concise descriptions.
 
 ---
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
+This repository and compilation are licensed under the [Creative Commons Zero v1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/) Public Domain Dedication. Listed third-party products, projects, and trademarks belong to their respective copyright holders.
 
 ---
 
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+<div align="center">
+
+⭐ **Found this guide helpful? Please star this repository to support the community!** ⭐
+
+</div>
