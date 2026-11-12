@@ -51,6 +51,8 @@
   - [Apache Syncope](#17-apache-syncope)
 - [📊 Comparison at a Glance](#-comparison-at-a-glance)
 - [🤝 Contributing](#-contributing)
+- [💖 Support](#-support)
+- [📈 Star History](#-star-history)
 - [📄 License](#-license)
 
 ---
@@ -271,6 +273,34 @@ Contributions are warmly welcome! Help keep this repository the authoritative, u
    - Must provide concrete RBAC, IGA, ReBAC, or entitlement functionality.
    - For open-source tools, include the stack, license, and public GitHub repository link.
 3. **Submit a pull request** with clear, concise descriptions.
+
+---
+
+## 💖 Support
+
+Thank you for exploring and utilizing this curated directory! If you found this resource valuable for your research, architecture design, or engineering work, please consider supporting the project:
+
+- 🌟 **Star this repository** to improve its visibility and help other developers discover it.
+- 🍴 **Fork and share** it with your colleagues, teammates, or engineering communities.
+- 📢 **Spread the word** across social platforms, Discord, Reddit, and tech blogs.
+- ☕ **Buy me a coffee**: If you would like to financially support ongoing maintenance and new curated additions, you can sponsor through the **[GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007)**.
+
+<div align="center">
+
+<a href="https://github.com/sponsors/ishandutta2007">
+  <img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?style=for-the-badge&logo=githubsponsors" alt="Sponsor on GitHub" />
+</a>
+<a href="https://github.com/sponsors/ishandutta2007">
+  <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee" />
+</a>
+
+</div>
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://www.star-history.com/svg?repos=ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/Awesome-Role-Based-Access-Control-Entitlements&type=date&legend=top-left)
 
 ---
 
